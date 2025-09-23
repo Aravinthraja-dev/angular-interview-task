@@ -1,0 +1,53 @@
+[
+  {
+    "label": "Name",
+    "name": "name",
+    "field": "text",
+    "requiredYn": "Y",
+    "errorMessage": "Name is required",
+    "inline": "Y",
+    "toasterMsg": "Y"
+  },
+  {
+    "label": "Age",
+    "name": "age",
+    "field": "number",
+    "requiredYn": "N",
+    "inline": "N",
+    "toasterMsg": "N"
+  },
+  {
+    "label": "Gender",
+    "name": "gender",
+    "field": "radio",
+    "requiredYn": "Y",
+    "options": ["Male", "Female", "Other"]
+  },
+  {
+    "label": "Country",
+    "name": "country",
+    "field": "select",
+    "requiredYn": "Y",
+    "options": ["India", "USA", "UK"],
+    "errorMessage": "Please select a country"
+  },
+  {
+    "label": "State",
+    "name": "state",
+    "field": "select",
+    "requiredYn": "Y",
+    "dependsOn": "country",
+    "optionsMap": {
+      "India": ["Tamil Nadu", "Kerala", "Karnataka", "Maharashtra"],
+      "USA": ["California", "Texas", "New York"],
+      "UK": ["London", "Manchester", "Liverpool"]
+    },
+    "errorMessage": "Please select a state"
+  },
+  {
+    "label": "Date of Birth",
+    "name": "dob",
+    "field": "date",
+    "requiredYn": "N"
+  }
+]

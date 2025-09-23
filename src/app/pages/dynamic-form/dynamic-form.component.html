@@ -1,0 +1,26 @@
+@if (formData) {
+<form class="form" [formGroup]="formData" (ngSubmit)="onSubmit()">
+    @for (config of formConfig; track $index) {
+        @switch (config.field) {
+            @case ('text') {
+                <app-text-box [FormConfig]="config" [FormData]="formData"></app-text-box>
+            }
+            @case ('number'){
+                <app-number-box [FormConfig]="config" [FormData]="formData"></app-number-box>
+            }
+            @case ('radio'){
+                <app-radio-button [FormConfig]="config" [FormData]="formData"></app-radio-button>
+            }
+            @case ('select'){
+                <app-select-box [FormConfig]="config" [FormData]="formData"></app-select-box>
+            }
+            @case ('date'){
+                <app-date-box [FormConfig]="config" [FormData]="formData"></app-date-box>
+            }
+        }
+    }
+    <div class="button-block">
+        <button type="submit">Submit</button>
+    </div>
+</form>
+}

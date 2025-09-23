@@ -1,0 +1,11 @@
+<div [formGroup]="FormData" class="form-group">
+    <label>{{FormConfig.label}}</label>
+    <input [type]="FormConfig.field" [formControlName]="FormConfig.name">
+    @if(FormConfig.requiredYn === 'Y') {
+    <div class="error-block">
+        @if(FormData.get(FormConfig.name)?.touched && FormData.get(FormConfig.name)?.invalid) {
+        <span class="error">{{ FormConfig.errorMessage }}</span>
+        }
+    </div>
+    }
+</div>

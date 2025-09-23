@@ -1,0 +1,28 @@
+.form-group {
+    width: 255px;
+
+    label {
+        display: block;
+        margin-top: 20px;
+        font-size: 14px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: black;
+    }
+
+    select {
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .error-block {
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    }
+
+}

@@ -1,0 +1,18 @@
+<div [formGroup]="FormData" class="form-group">
+    <label>{{ FormConfig.label }}</label>
+    <div class="radio-container">
+    @for (option of FormConfig.options; track $index) {
+    <div class="radio-block">
+        <input type="radio" [formControlName]="FormConfig.name" [value]="option">
+        <label>{{ option }}</label>
+    </div>
+    }
+    </div>
+    @if(FormConfig.requiredYn === 'Y') {
+    <div class="error-block">
+        @if (FormData.get(FormConfig.name)?.invalid && FormData.get(FormConfig.name)?.touched) {
+        <span class="error">{{ FormConfig.errorMessage }}</span>
+        }
+    </div>
+    }
+</div>
