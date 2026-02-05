@@ -1,0 +1,8 @@
+<section class="board">
+    @for (box of board(); track $index) {
+    <article 
+        class="box" 
+        [ngClass]="{ x:box === 'x', o:box === 'o' }"
+        (click)="move($index, currentPlayer())"></article>
+    }
+</section>
